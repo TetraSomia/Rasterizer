@@ -15,7 +15,7 @@ CC	= 	gcc
 INC     =       ./include/
 
 CFLAGS 	+=	-I$(INC) \
-		-W -Wall -Wextra -O3
+		-Wall -Wextra -O3
 
 LDFLAGS +=	-I/home/${USER}/.froot/include/ \
                 -L/home/${USER}/.froot/lib/ \
