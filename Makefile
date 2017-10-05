@@ -14,11 +14,10 @@ CC	= 	gcc
 
 INC     =       ./include/
 
-CFLAGS 	+=	-I$(INC) \
+CFLAGS 	+=	-I$(INC) -I/home/${USER}/.froot/include/ \
 		-W -Wall -Wextra -O3
 
-LDFLAGS +=	-I/home/${USER}/.froot/include/ \
-                -L/home/${USER}/.froot/lib/ \
+LDFLAGS +=	-L/home/${USER}/.froot/lib/ \
 		-llapin -lsfml-audio -lsfml-graphics -lsfml-window \
                 -lsfml-system -lstdc++ -ldl -lm
 
