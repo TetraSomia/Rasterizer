@@ -11,13 +11,18 @@ With them :
 
 (we are actively working to find his shoe)
 
-Compilation :
+## Build
 
-- Use <code>make</code> for basic version
-- Use <code>make CC="gcc -D FDF"</code> for linking vertices to each other
-- Use <code>make CC="gcc -D ZBUFF"</code> for vertices colored by the Z-buffer
+First build the liblapin library using `make lapin`.
 
-Keys :
+You can now build the rasterizer:
+- Use `make` for basic version
+- Use `make CC="gcc -D FDF"` for linking vertices to each other
+- Use `make CC="gcc -D ZBUFF"` for vertices colored by the Z-buffer
+
+## Usage
+
+`./rasterizer demo/dragon.ini`
 
 - Move the object : W/A/S/D
 - Rotate the object : Arrows and PG-UP/PG-DOWN

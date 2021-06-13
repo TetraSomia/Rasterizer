@@ -12,15 +12,15 @@ NAME    =	rasterizer
 
 CC	= 	gcc
 
-INC     =       ./include/
+INC     =       -I./include/ -I./liblapin/include/
 
-CFLAGS 	+=	-I$(INC) \
+CFLAGS 	+=	$(INC) \
 		-W -Wall -Wextra -O3
 
-LDFLAGS +=	-I/home/${USER}/.froot/include/ \
-                -L/home/${USER}/.froot/lib/ \
-		-llapin -lsfml-audio -lsfml-graphics -lsfml-window \
-                -lsfml-system -lstdc++ -ldl -lm
+LDFLAGS +=	-L./liblapin -llapin \
+		-lsfml-audio -lsfml-graphics \
+		-lsfml-window -lsfml-system \
+		-lstdc++ -ldl -lm
 
 SRCS	=	./src/
 
@@ -86,7 +86,7 @@ RM	= 	rm -f
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		@$(CC) $(OBJ) -o $(NAME) $(LDFLAGS) 
+		@$(CC) $(OBJ) -o $(NAME) $(LDFLAGS)
 
 clean:
 		@$(RM) $(OBJ)
@@ -96,4 +96,10 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY:		all clean fclean re
+lapin:
+		$(MAKE) -C liblapin
+
+cleanlapin:
+		$(MAKE) -C liblapin fclean
+
+.PHONY:		all clean fclean re lapin cleanlapin

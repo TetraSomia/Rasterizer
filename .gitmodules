@@ -1,0 +1,3 @@
+[submodule "liblapin"]
+	path = liblapin
+	url = https://github.com/TetraSomia/liblapin.git
